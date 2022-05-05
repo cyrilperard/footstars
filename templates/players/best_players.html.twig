@@ -1,0 +1,7 @@
+<ul>
+    {% for player in players %}
+    <li class="img-effect2"><a href="/players/{{ player.player.0.firstName|lower|replace({' ': '-'}) }}-{{ player.player.0.lastName|lower|replace({' ': '-'}) }}/{{ player.player.0.id }}"><img width="165" height="148"
+                                                               src="{{ player.player.0.photo }}"
+                                                                alt=""></a></li>
+    {% endfor %}
+</ul>

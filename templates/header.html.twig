@@ -1,0 +1,92 @@
+<header class="site-header header-style-6 dark mo-left ">
+    <!-- main header -->
+    <div class=" sticky-header main-bar-wraper navbar-expand-lg navbar-expand-lg">
+        <div class="main-bar clearfix ">
+            <div class="top-bar">
+                <div class="container top-bar-crve">
+                    <div class="row justify-content-between">
+                        <div class="dez-topbar-left">
+                            <ul class="social-line text-center pull-right">
+                                <li><a href="javascript:void(0);"><i class="fa fa-envelope-o"></i> <span> contact@footstars.com </span>
+                                    </a></li>
+                                {# <li><a href="javascript:void(0);"><i class="fa fa-phone"></i>
+                                        <span> 06.00.00.00.00 </span> </a></li> #}
+                            </ul>
+                        </div>
+                        <div class="dez-topbar-right ">
+                            <ul class="social-line text-center pull-right">
+                                <li><a href="https://www.facebook.com/footstars/" target="blank" class="fa fa-facebook"></a></li>
+                                <li><a href="https://twitter.com/footstars" target="blank" class="fa fa-twitter"></a></li>
+                                <li><a href="https://www.instagram.com/footstars/" target="blank" class="fab fa-instagram"></a></li>
+                                <li><a href="https://www.snapchat.com/add/footstars" target="blank" class="fab fa-snapchat"></a></li>
+                                <li><a href="https://t.me/footstars" target="blank" class="fab fa-telegram"></a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="header-bar">
+                <div class="container clearfix">
+                    <!-- website logo -->
+                    <div class="logo-header mostion"><a href="{{ path('home') }}"><img
+                                    src="/assets/images/green-logo-2.png" width="193" height="89" alt=""></a></div>
+                    <!-- nav toggle button -->
+                    <button class="navbar-toggler collapsed navicon justify-content-end" type="button"
+                            data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    <!-- main nav -->
+                    <div class="header-nav navbar-collapse collapse justify-content-end" id="navbarNavDropdown">
+                        <ul class=" nav navbar-nav">
+                            {% if app.user is null %}
+                                <li class="mr-1 {% if app.request.get('_route') == "home" %}active active-white{% endif %}">
+                                    <a href="{{ path('home') }}"><i style="font-size: 15px" class="fa-solid fa-house mr-1"></i> Accueil</a>
+                                </li>
+                                <li class="mr-1">
+                                    <a href="javascript:;">
+                                        <i style="font-size: 15px" class="fa fa-user mr-1"></i> Authentification</a>
+                                    <ul class="sub-menu">
+                                        <li><a href="{{ path('app_register') }}"><i style="font-size: 15px"
+                                                                                    class="fas fa-user-plus mr-1"></i>
+                                                Inscription</a></li>
+                                        <li><a href="{{ path('app_login') }}"><i style="font-size: 15px"
+                                                                                 class="fas fa-sign-in mr-1"></i>
+                                                Connexion</a></li>
+                                    </ul>
+                                </li>
+                            {% else %}
+                                <li class="mr-1 {% if app.request.get('_route') == "home" %}active active-white{% endif %}">
+                                    <a href="{{ path('home') }}"><i style="font-size: 15px" class="fa-solid fa-house mr-1"></i> Accueil</a>
+                                </li>
+                                <li class="mr-1 {% if (app.request.get('_route') == "profil" or app.request.get('_route') == "profil_edit") %}active active-white{% endif %}">
+                                    <a href="javascript:;">
+                                        <i style="font-size: 15px" class="fa fa-user mr-1"></i> Espace membre</a>
+                                    <ul class="sub-menu">
+                                        {% if is_granted('ROLE_ADMIN') %}
+                                            <li><a href="{{ path('admin') }}"><i style="font-size: 15px"
+                                                                                 class="fa-solid fa-key"></i> Admin</a>
+                                            </li>
+                                            <li><a href="{{ path('app_stats') }}"><i style="font-size: 15px"
+                                                                                     class="fa-solid fa-key"></i> Statistiques</a>
+                                            </li>
+                                        {% endif %}
+                                        <li><a href="{{ path('profil') }}"><i style="font-size: 15px"
+                                                                              class="fas fa-user-alt mr-1"></i>
+                                                Profil</a></li>
+                                        <li><a href="{{ path('app_logout') }}"><i style="font-size: 15px"
+                                                                                  class="fas fa-sign-out fa-1x mr-1"></i>
+                                                Deconnexion</a></li>
+                                    </ul>
+                                </li>
+                            {% endif %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- main header END -->
+</header>

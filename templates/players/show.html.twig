@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}footstars | {{ player.lastName }} {{ player.FirstName }}{% endblock %}
+
+{% block body %}
+    <!-- Breadcrumb row -->
+    <div class="breadcrumb-row">
+        <div class="container">
+            <ul class="list-inline">
+                <li><a href="{{ path('home') }}">Accueil</a></li>
+                <li>Joueurs</li>
+                <li>{{ player.name }}</li>
+            </ul>
+        </div>
+    </div>
+    <!-- Breadcrumb row END -->
+    <!-- contact area -->
+    <div class="content-area">
+        <!-- who we are -->
+        <div class="page-content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img width="192" height="351" src="{{ player.photo }}" alt=""/>
+                    </div>
+                    <div class="col-md-9">
+                        <h3>Informations sur le joueur</h3>
+                        <p>
+                            Joueur : {{ player.name }}<br>
+                            Nom : {{ player.lastName }}<br>
+                            Prénom : {{ player.FirstName }}<br>
+                            Date de naissance : {{ player.birthDate|date("Y-m-d") }}<br>
+                            Lieu de naissance : {{ player.birthPlace }}<br>
+                            Pays de naissance : {{ player.birthCountry }}<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="row mb-5" >
+                <div class="col-md-12">
+                    {% if app.user is null %}
+                        <div align="center" class="center">
+                            <div class="center-div">
+                                        <span style="margin: auto"><a href="{{ path('app_login') }}"
+                                                                      style="color: white; background-color: #2D3239; padding: 5px;; border-radius: 10px"><b>Connectez-vous</b></a> pour accéder à cette partie.</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                    <div class="section-full overlay-black-dark bg-img-fix content-inner" {% if app.user is null %}style="filter:blur(40px);" {% endif %} style="background-image:url(images/background/bg3.jpg);">
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="dex-box text-primary border-2 counter-box m-b30">
+                                        <h1 class="text-uppercase text-white m-a0 p-a15 "><i class="fa fa-birthday-cake m-r20"></i> <span class="counter">{% if player.age is not empty and app.user is not null %}{{ player.age }}{% else %}Inconnu{% endif %}</span></h1>
+                                        <h5 class="dez-tilte  text-uppercase m-a0"><span class="dez-tilte-inner skew-title bg-primary p-lr15 p-tb10">Age</span></h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="dex-box text-primary border-2 counter-box m-b30">
+                                        <h1 class="text-uppercase text-white m-a0 p-a15 "><i class="fas fa-arrows-alt-v m-r20"></i>{% if player.height is not empty and app.user is not null %}{{ player.height }}{% else %}Inconnue{% endif %}</h1>
+                                        <h5 class="dez-tilte  text-uppercase m-a0"><span class="dez-tilte-inner skew-title bg-primary p-lr15 p-tb10">Taille</span></h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="dex-box text-primary border-2 counter-box m-b30">
+                                        <h1 class="text-uppercase text-white m-a0 p-a15 "><i class="fas fa-weight m-r20"></i>{% if player.weight is not empty and app.user is not null %}{{ player.weight }}{% else %}Inconnu{% endif %}</h1>
+                                        <h5 class="dez-tilte  text-uppercase m-a0"><span class="dez-tilte-inner skew-title bg-primary p-lr15 p-tb10">Poids</span></h5>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-sm-6">
+                                    <div class="dex-box text-primary border-2 counter-box m-b30">
+                                        <h1 class="text-uppercase text-white m-a0 p-a15 "><i class="fa fa-home m-r20"></i>{% if player.nationality is not empty and app.user is not null %}{{ player.nationality }}{% else %}Inconnue{% endif %}</h1>
+                                        <h5 class="dez-tilte  text-uppercase m-a0"><span class="dez-tilte-inner skew-title bg-primary p-lr15 p-tb10">Nationalité</span></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        .center-div {
+            position: absolute;
+            margin: auto;
+            top: 20%;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            width: 70%;
+            height: auto;
+            max-height: 70px;
+            padding: 10px;
+            background-color: #6B8E23;
+            color: white;
+            border-radius: 5px;
+            z-index: 1;
+        }
+    </style>
+{% endblock %}

@@ -1,0 +1,26 @@
+.center{
+    display: block !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+.acod-head a:after{
+    color: white !important;
+}
+
+h2{
+    text-decoration: underline double #6a8e22;
+}
+
+.active-white{
+    color: white !important;
+}
+
+html,body
+{
+    width: 100% !important;
+    height: 100% !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow-x: hidden !important;
+}

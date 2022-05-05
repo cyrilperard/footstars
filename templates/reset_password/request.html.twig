@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content=""/>
+    <meta name="author" content=""/>
+    <meta name="robots" content=""/>
+    <meta name="description"
+          content="SportsZone is an HTML5/CSS3 eCommerce template that is best for Sports Items/Tools, any kind of stores Like Sports Store, Bike and Cycle Parts, Hardware, Toos, Construction Item."/>
+    <meta property="og:title" content="footstars - CONNEXION"/>
+    <meta property="og:description"
+          content="SportsZone is an HTML5/CSS3 eCommerce template that is best for Sports Items/Tools, any kind of stores Like Sports Store, Bike and Cycle Parts, Hardware, Toos, Construction Item."/>
+    <meta property="og:image" content="http://sportszone.dexignlab.com/xhtml/social-image.png"/>
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicons Icon -->
+    <link rel="icon" href="/assets/images/green-favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/green-favicon.png"/>
+
+    <!-- Page Title Here -->
+    <title>footstars - CONNEXION</title>
+
+    <!-- Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lt IE 9]>
+    <script src="/assets/js/html5shiv.min.js"></script>
+    <script src="/assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.min.css">
+    <link rel="stylesheet" type="text/css" class="skin" href="/assets/css/skin/skin-9.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/templete.min.css">
+
+</head>
+<body id="bg">
+<div class="page-wrapers">
+    <!-- Content -->
+    <div class="page-content dez-login p-t50 p-lr15 nav" style="background-image:url(/assets/images/background-login.jpg);">
+        <div class="login-form">
+            <div class="tab-content">
+                <div id="login" class="tab-pane active text-center">
+                    <div class="p-a25 dez-form p-b0 m-t100">
+                        {% for flash_error in app.flashes('reset_password_error') %}
+                            <div class="alert alert-danger" role="alert">{{ flash_error }}</div>
+                        {% endfor %}
+                        <h3 class="form-title m-t0">Réinitialiser mon mot de passe</h3>
+                        <div class="dez-separator-outer m-b5">
+                            <div class="dez-separator bg-primary style-liner"></div>
+                        </div>
+
+                        {{ form_start(requestForm) }}
+
+                        <div class="mb-2">
+                            {{ form_widget(requestForm.email) }}
+                        </div>
+
+                        <div class="mb-2">
+                            <small>
+                                Entrez votre adresse e-mail et recevez un lien pour réinitialiser votre mot de passe.
+                            </small>
+                        </div>
+
+                        <div class="form-group text-center">
+                            <button type="submit" class="site-button m-r5 login-switch">Recevoir le lien</button>
+                        </div>
+                        {{ form_end(requestForm) }}
+                    </div>
+                    <div class="bg-primary p-a15 "><a data-toggle="tab" href="{{ path('app_register') }}" class="text-white">Créer un compte</a></div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content END-->
+</div>
+<!-- JavaScript  files ========================================= -->
+<script src="/assets/js/jquery.min.js"></script><!-- JQUERY.MIN JS -->
+<script src="/assets/plugins/bootstrap//assets/js/popper.min.js"></script><!-- BOOTSTRAP.MIN JS -->
+<script src="/assets/plugins/bootstrap//assets/js/bootstrap.min.js"></script><!-- BOOTSTRAP.MIN JS -->
+<script src="/assets/plugins/bootstrap-select/bootstrap-select.min.js"></script><!-- FORM JS -->
+<script src="/assets/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script><!-- FORM JS -->
+<script src="/assets/plugins/magnific-popup/magnific-popup.js"></script><!-- MAGNIFIC POPUP JS -->
+<script src="/assets/plugins/counter/waypoints-min.js"></script><!-- WAYPOINTS JS -->
+<script src="/assets/plugins/counter/counterup.min.js"></script><!-- COUNTERUP JS -->
+<script src="/assets/plugins/countdown/jquery.countdown.js"></script><!-- COUNTDOWN JS -->
+<script src="/assets/plugins/imagesloaded/imagesloaded.js"></script><!-- IMAGESLOADED -->
+<script src="/assets/plugins/masonry/masonry-3.1.4.js"></script><!-- MASONRY -->
+<script src="/assets/plugins/masonry/masonry.filter.js"></script><!-- MASONRY -->
+<script src="/assets/plugins/owl-carousel/owl.carousel.js"></script><!-- OWL SLIDER -->
+<script src="/assets/js/dz.ajax.js"></script><!-- CONTACT JS  -->
+<script src="/assets/js/custom.min.js"></script><!-- CUSTOM FUCTIONS  -->
+<script src="/assets/js/dz.carousel.min.js"></script><!-- SORTCODE FUCTIONS  -->
+</body>
+</html>

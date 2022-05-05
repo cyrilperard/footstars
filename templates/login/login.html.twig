@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="" />
+    <meta name="author" content="footstars" />
+    <meta name="robots" content="" />
+    <meta http-equiv="Content-Language" content="fr,en" />
+    <meta name="description" content="footstars 2.0 est un outil algorithmique qui génére des prédictions sur les matchs de football. Toutes les prédictions sont directement disponible sur le site internet."/>
+    <meta property="og:title" content="footstars 2.0 - Outil algorithmique"/>
+    <meta property="og:description" content="footstars 2.0 est un outil algorithmique qui génére des prédictions sur les matchs de football. Toutes les prédictions sont directement disponible sur le site internet." />
+    <meta property="og:image" content="/assets/images/banniere.png" />
+    <meta name="format-detection" content="telephone=no">
+
+    <!-- Favicons Icon -->
+    <link rel="icon" href="/assets/images/green-favicon.png" type="image/x-icon" />
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/images/green-favicon.png"/>
+
+    <!-- Page Title Here -->
+    <title>footstars - CONNEXION</title>
+
+    <!-- Mobile Specific -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--[if lt IE 9]>
+    <script src="/assets/js/html5shiv.min.js"></script>
+    <script src="/assets/js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" type="text/css" href="/assets/css/plugins.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/style.min.css">
+    <link rel="stylesheet" type="text/css" class="skin" href="/assets/css/skin/skin-9.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/templete.min.css">
+
+</head>
+<body id="bg">
+<div class="page-wrapers">
+    <!-- Content -->
+    <div class="page-content dez-login p-t50 p-lr15 nav" style="background-image:url(/assets/images/background-login.jpg);">
+        <div class="login-form">
+            <div class="tab-content">
+                <div id="login" class="tab-pane active text-center">
+                    <form method="post" action="{{ path('app_login') }}" class="p-a25 dez-form p-b0 m-t100">
+                        {% if error %}
+                            <div class="alert alert-danger" role="alert">
+                                {{ error.messageKey|trans(error.messageData, 'security') }}
+                            </div>
+                        {% endif %}
+                        <h3 class="form-title m-t0">Connexion</h3>
+                        <div class="dez-separator-outer m-b5">
+                            <div class="dez-separator bg-primary style-liner"></div>
+                        </div>
+                        <p>Entrez votre adresse mail et votre mot de passe. </p>
+                        <div class="form-group">
+                            <input class="form-control" type="text" id="username" name="_username" value="{{ last_username }}" placeholder="Votre adresse mail" required/>
+                        </div>
+                        <div class="form-group">
+                            <input class="form-control" type="password" id="password" name="_password" placeholder="Votre mot de passe" required/>
+                        </div>
+                        <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+                        <div class="form-group text-left">
+                            <button type="submit" class="site-button m-r5 login-switch">Connexion</button>
+                            <a data-toggle="tab" href="/reset-password" class="m-l15"><i class="fa fa-unlock-alt"></i> Mot de passe oublié</a>
+                        </div>
+                    </form>
+                    <div class="bg-primary p-a15 "><a data-toggle="tab" href="{{ path('app_register') }}" class="text-white">Créer un compte</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Content END-->
+</div>
+<!-- JavaScript  files ========================================= -->
+<script src="/assets/js/jquery.min.js"></script><!-- JQUERY.MIN JS -->
+<script src="/assets/plugins/bootstrap//assets/js/popper.min.js"></script><!-- BOOTSTRAP.MIN JS -->
+<script src="/assets/plugins/bootstrap//assets/js/bootstrap.min.js"></script><!-- BOOTSTRAP.MIN JS -->
+<script src="/assets/plugins/bootstrap-select/bootstrap-select.min.js"></script><!-- FORM JS -->
+<script src="/assets/plugins/bootstrap-touchspin/jquery.bootstrap-touchspin.js"></script><!-- FORM JS -->
+<script src="/assets/plugins/magnific-popup/magnific-popup.js"></script><!-- MAGNIFIC POPUP JS -->
+<script src="/assets/plugins/counter/waypoints-min.js"></script><!-- WAYPOINTS JS -->
+<script src="/assets/plugins/counter/counterup.min.js"></script><!-- COUNTERUP JS -->
+<script src="/assets/plugins/countdown/jquery.countdown.js"></script><!-- COUNTDOWN JS -->
+<script src="/assets/plugins/imagesloaded/imagesloaded.js"></script><!-- IMAGESLOADED -->
+<script src="/assets/plugins/masonry/masonry-3.1.4.js"></script><!-- MASONRY -->
+<script src="/assets/plugins/masonry/masonry.filter.js"></script><!-- MASONRY -->
+<script src="/assets/plugins/owl-carousel/owl.carousel.js"></script><!-- OWL SLIDER -->
+<script src="/assets/js/dz.ajax.js"></script><!-- CONTACT JS  -->
+<script src="/assets/js/custom.min.js"></script><!-- CUSTOM FUCTIONS  -->
+<script src="/assets/js/dz.carousel.min.js"></script><!-- SORTCODE FUCTIONS  -->
+</body>
+</html>
